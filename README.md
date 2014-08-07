@@ -10,7 +10,7 @@ About
 -----
 *ytcrawl* is a YouTube video viewcount (can also crawl subscribers/shares/watchtimes when available) history crawler. During middle 2013, YouTube has published videos' history daily viewcount (when uploaders make it public, see the image below). These can be precious data for computational social science research. This crawler aims to help researchers efficiently download the data.
 
-![Alt img](https://github.com/yuhonglin/YTCrawl/edit/master/img/dailyViewcount.png "videoID: OQSNhk5ICTI")
+![dailyViewcount.png](img/dailyViewcount.png "videoID: OQSNhk5ICTI")
 
 
 
