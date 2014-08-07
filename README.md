@@ -8,8 +8,9 @@ Email: yuhonglin1986@gmail.com
 
 About
 -----
-*ytcrawl* is a YouTube video viewcount (can also crawl subscribers/shares/watchtimes when available) history crawler. During middle 2013, YouTube has published videos' history daily viewcount (when uploaders make it public). These can be precious data for computational social science research. This crawler aims to help researchers efficiently download the data.
+*ytcrawl* is a YouTube video viewcount (can also crawl subscribers/shares/watchtimes when available) history crawler. During middle 2013, YouTube has published videos' history daily viewcount (when uploaders make it public, see the image below). These can be precious data for computational social science research. This crawler aims to help researchers efficiently download the data.
 
+![alt tag](https://github.com/yuhonglin/YTCrawl/edit/master/img/dailyViewcount.png)
 
 Basic functionalities
 ---------------------
@@ -36,7 +37,7 @@ c = Crawler()
 The configuration of this object is explained in below
 3. Begin to crawl,
 ```python
-c.single_crawl("videoID")  # crawl a single video by their ID
+c.single_crawl("OQSNhk5ICTI")  # crawl a single video by ID "OQSNhk5ICTI"
 c.batch_crawl("/path/to/videoID/file", "/output/path") # crawl all the videos in a file. Output the crawled data and log files input an output folder.
 ```
 
