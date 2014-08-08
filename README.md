@@ -25,26 +25,24 @@ Basic functionalities
 Usage
 -----
 
-  1. Put the code somewhere, add its folder to python library path and then import ```Crawler```, for example,
+1. Put the code somewhere, add its folder to python library path and then import ```Crawler```, for example,
 ```python
 >>> import sys
 >>> sys.path.append('/path/to/ytcrawl')
 >>> from crawler import Crawler
 ```
-
-  2. Create an crawler object
+2. Create an crawler object
 ```python
 >>> c = Crawler()
 ```
 The configuration of this object is explained in below
-
-  3. Begin to crawl,
-    - single crawl
+3. Begin to crawl,
+  - single crawl
 ```python
 >>> print c.single_crawl("OQSNhk5ICTI")  # crawl a single video by ID "OQSNhk5ICTI"
 {'numShare': [], 'numSubscriber': [], 'watchTime': [], 'uploadDate': datetime.date(2010, 1, 9), 'dailyViewcount': [16, 11, 2, 1, 0, ...,  4800, 4891, 4844, 5427, 5505, 5068, 4663]}
 ```
-    - batch_crawl,
+  - batch_crawl,
 ```python
 # crawl all the videos listed in the input file.
 # The crawled data and log files are stored in "/output/path".
