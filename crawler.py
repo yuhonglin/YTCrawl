@@ -189,7 +189,7 @@ class Crawler(object):
         
 
         if state == 'fail':
-            self.email('times of updating cookies reaches maximum, please report this on github' % str(e))
+            self.email('times of updating cookies reaches maximum, please report this on github (%s)' % str(e))
             self._mutex_crawl.release()
             exit(1)
 
