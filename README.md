@@ -39,7 +39,8 @@ Usage
 3. Begin to crawl,
   - single crawl
   ```python
-  # crawl a single video by ID "OQSNhk5ICTI"
+  # crawl a single video by ID "OQSNhk5ICTI".
+  # We can only crawl daily viewcount of this video
   >>> print c.single_crawl("OQSNhk5ICTI")
   {'numShare': [], 'numSubscriber': [], 'watchTime': [], 'uploadDate': datetime.date(2010, 1, 9), 'dailyViewcount': [16,   11, 2, 1, 0, ...,  4800, 4891, 4844, 5427, 5505, 5068, 4663]}
   ```
