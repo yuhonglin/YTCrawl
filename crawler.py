@@ -22,8 +22,12 @@ from lib.xmlparser import *
 
 class Crawler(object):
     """The crawler class
-       - input is a file
-       - output is a directory
+       - for batch_crawl:
+         - input is a file
+         - output is a directory
+       - for single_crawl
+         - input is a video's ID
+         - output is a dictionay containing possible information
     """
     
     def __init__(self):
