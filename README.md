@@ -27,40 +27,46 @@ Usage
 
 1. Put the code somewhere, add its folder to python library path and then import ```Crawler```, for example,
 ```python
-import sys
-sys.path.append('/path/to/ytcrawl')
-from crawler import Crawler
+>>> import sys
+>>> sys.path.append('/path/to/ytcrawl')
+>>> from crawler import Crawler
 ```
 
 2. Create an crawler object
 ```python
-c = Crawler()
+>>> c = Crawler()
 ```
 The configuration of this object is explained in below
 
 3. Begin to crawl,
+- single crawl
 ```python
-c.single_crawl("OQSNhk5ICTI")  # crawl a single video by ID "OQSNhk5ICTI"
-c.batch_crawl("/path/to/videoID/file", "/output/path") # crawl all the videos in a file. Output the crawled data and log files input an output folder.
+>>> print c.single_crawl("OQSNhk5ICTI")  # crawl a single video by ID "OQSNhk5ICTI"
+{'numShare': [], 'numSubscriber': [], 'watchTime': [], 'uploadDate': datetime.date(2010, 1, 9), 'dailyViewcount': [16, 11, 2, 1, 0, ...,  4800, 4891, 4844, 5427, 5505, 5068, 4663]}
+```
+- batch_crawl,
+```python
+# crawl all the videos in a file. Output the crawled data and log files input an output folder.
+>>> c.batch_crawl("/path/to/videoID/file", "/output/path") 
 ```
 
 Input/Output Format
 -------------------
-
+* For ```single_crawl```
+  - Input : a videoID
+  - Output : a dictionary containing all the possible information crawled
 * For ```batch_crawl```
   - Input videoID file: every line in the input file is a videoID
   - Output Folder:
      - ```data``` folder : contains the xml response from YouTube using "hash folder structure". One can extract the information after crawling.
      - ```key.done``` : videos whose information is crawled
      - ```key.disabled``` : videos whose information is not public (can not crawl)
-     - ```key.invalidrequest``` : If you receive lots of error here, please report it on Github
+     - ```key.invalidrequest``` : If you receive *lots* of error (for nearly all the videos) here, please report it on Github. These videos will be crawled again in next run.
      - ```key.nostatyet``` : no statistics for the video: often because the video is newly uploaded
      - ```key.quotalimit``` : the speed is too fast, exceed YouTube's quota. These videos can be crawled again in next run.
      - ```key.private``` : the video is a private video (can not crawl)
      - ```key.notfound``` : the videoID is wrong or the video has disappeared from YouTube
-* For ```single_crawl```
-  - Input : a videoID
-  - Output : a dictionary containing all the possible information crawled
+
 
 Configuration
 -------------
@@ -77,4 +83,3 @@ Optional: Email Reminder
 LICENSE
 --------
 BSD 3 clause
-
