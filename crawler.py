@@ -312,7 +312,7 @@ class Crawler(object):
         self._logger = Logger(self._output_dir)
         self._logger.add_log({'disabled': 'key.disabled', 'notfound': 'key.notfound', 'quotalimit': 'key.quotalimit', 'nostatyet': 'key.nostatyet', 'invalidrequest': 'key.invalidrequest', 'private': 'key.private'})
         
-        self._key_done = set(self._logger.get_key_done(['notfound', 'nostatyet']))
+        self._key_done = set(self._logger.get_key_done(['notfound', 'nostatyet', 'disabled', 'private']))
 
         self._delay_mutex = threading.Lock()
 
