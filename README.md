@@ -24,18 +24,20 @@ Basic functionalities
 
 Usage
 -----
-The following example shows how to crawl the history viewcount of video "WoUsHkdb12A"
+
 1. Put the code somewhere, add its folder to python library path and then import ```Crawler```, for example,
 ```python
 import sys
 sys.path.append('/path/to/ytcrawl')
 from crawler import Crawler
 ```
+
 2. Create an crawler object
 ```python
 c = Crawler()
 ```
 The configuration of this object is explained in below
+
 3. Begin to crawl,
 ```python
 c.single_crawl("OQSNhk5ICTI")  # crawl a single video by ID "OQSNhk5ICTI"
