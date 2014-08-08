@@ -47,17 +47,28 @@ Input/Output Format
 -------------------
 
 * For ```batch_crawl```
-  - every line in the input file is a videoID
+  - Input videoID file: every line in the input file is a videoID
+  - Output Folder:
+     - ```data``` folder : contains the xml response from YouTube using "hash folder structure". One can extract the information after crawling.
+     - ```key.done``` : videos whose information is crawled
+     - ```key.disabled``` : videos whose information is not public (can not crawl)
+     - ```key.invalidrequest``` : If you receive lots of error here, please report it on Github
+     - ```key.nostatyet``` : no statistics for the video: often because the video is newly uploaded
+     - ```key.quotalimit``` : the speed is too fast, exceed YouTube's quota. These videos can be crawled again in next run.
+     - ```key.private``` : the video is a private video (can not crawl)
+     - ```key.notfound``` : the videoID is wrong or the video has disappeared from YouTube
 * For ```single_crawl```
   - ```data``` folder
 
 Continue from Breakpoint
 ------------------------
-
+Just rerun the crawler with same parameters, it can automatically jump over the videos which are already crawled.
 
 Optional: Email Reminder
 ------------------------
 
+
 LICENSE
 --------
 BSD 3 clause
+

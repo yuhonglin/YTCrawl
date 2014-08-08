@@ -284,6 +284,9 @@ class Crawler(object):
                 if '<error_message><![CDATA[Invalid request.]]></error_message>' in txt:
                     self._logger.log_warn( key, 'Invalid request', 'invalidrequest' )
                     continue
+
+                if '<error_message><![CDATA[Video is private.]]></error_message>' in txt:
+                    self._logger.log_warn( key, 'Private video', 'private' )
                 
                 self._logger.log_done( key )
                 self.store(key, txt)
@@ -303,7 +306,7 @@ class Crawler(object):
         self._output_dir = output_dir
 
         self._logger = Logger(self._output_dir)
-        self._logger.add_log({'disabled': 'key.disabled', 'notfound': 'key.notfound', 'quotalimit': 'key.quotalimit', 'nostatyet': 'key.nostatyet', 'invalidrequest': 'key.invalidrequest'})
+        self._logger.add_log({'disabled': 'key.disabled', 'notfound': 'key.notfound', 'quotalimit': 'key.quotalimit', 'nostatyet': 'key.nostatyet', 'invalidrequest': 'key.invalidrequest', 'private': 'key.private'})
         
         self._key_done = set(self._logger.get_key_done(['notfound', 'nostatyet']))
 
@@ -356,6 +359,9 @@ class Crawler(object):
 
         if '<error_message><![CDATA[Invalid request.]]></error_message>' in txt:
             raise Exception('Invalid request')
+
+        if '<error_message><![CDATA[Video is private.]]></error_message>' in txt:
+            raise Exception('private video')
 
         
         return parseString(txt)
