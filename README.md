@@ -26,12 +26,14 @@ Usage
 -----
 
 1. Put the code somewhere, add its folder to python library path and then import ```Crawler```, for example,
+
   ```python
   >>> import sys
   >>> sys.path.append('/path/to/ytcrawl')
   >>> from crawler import Crawler
   ```
 2. Create an crawler object
+
   ```python
   >>> c = Crawler()
   ```
