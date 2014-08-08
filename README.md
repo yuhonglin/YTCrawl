@@ -58,7 +58,9 @@ Input/Output Format
      - ```key.private``` : the video is a private video (can not crawl)
      - ```key.notfound``` : the videoID is wrong or the video has disappeared from YouTube
 * For ```single_crawl```
-  - ```data``` folder
+  - Input : a videoID
+  - Output : a dictionary containing all the possible information crawled
+
 
 Continue from Breakpoint
 ------------------------
