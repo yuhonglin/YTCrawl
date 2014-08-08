@@ -25,7 +25,6 @@ Basic functionalities
 Usage
 -----
 The following example shows how to crawl the history viewcount of video "WoUsHkdb12A"
-
 1. Put the code somewhere, add its folder to python library path and then import ```Crawler```, for example,
 ```python
 import sys
