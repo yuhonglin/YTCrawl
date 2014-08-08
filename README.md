@@ -46,7 +46,8 @@ The configuration of this object is explained in below
 ```
 - batch_crawl,
 ```python
-# crawl all the videos in a file. Output the crawled data and log files input an output folder.
+# crawl all the videos listed in the input file.
+# The crawled data and log files are stored in "/output/path".
 >>> c.batch_crawl("/path/to/videoID/file", "/output/path") 
 ```
 
