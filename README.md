@@ -12,6 +12,11 @@ About
 
 ![dailyViewcount.png](img/dailyViewcount.png "videoID: OQSNhk5ICTI")
 
+Citation
+--------
+This crawler was first used in the following project
+
+Honglin Yu, Lexing Xie and Scott Sanner, *Twitter-driven YouTube Views: Beyond Individual Influencers*, to appear in ACM Mutimedia 2014
 
 
 Basic functionalities
@@ -78,6 +83,7 @@ Configuration
 Continue from Breakpoint
 ------------------------
 Just rerun the crawler with same parameters, it can automatically jump over the videos which are already crawled.
+
 
 Optional: Email Reminder
 ------------------------
