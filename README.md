@@ -12,6 +12,11 @@ About
 
 ![dailyViewcount.png](img/dailyViewcount.png "videoID: OQSNhk5ICTI")
 
+
+Warning
+-------
+First run of ```single_crawl``` can be slow since the crawler needs to update cookies etc. It should be much faster afterwards. 
+
 Citation
 --------
 This crawler was first used in the following project
