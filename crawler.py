@@ -186,7 +186,7 @@ class Crawler(object):
                 else:
                     self._mutex_crawl.release()
                     self.email('meet error when update the cookies, please set a new seed video (%s)' % str(e))
-                    exit(1)
+                    raise Exception('meet error when update the cookies, please set a new seed video (%s)' % str(e))
                     
             state = 'success'
             break
@@ -195,7 +195,7 @@ class Crawler(object):
         if state == 'fail':
             self.email('times of updating cookies reaches maximum, please report this on github (%s)' % str(e))
             self._mutex_crawl.release()
-            exit(1)
+            raise Exception('times of updating cookies reaches maximum, please report this on github (%s)' % str(e))
 
         self._mutex_crawl.release()
 
