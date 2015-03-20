@@ -54,6 +54,10 @@ class Crawler(object):
         self._last_cookie_update_time = None
         self._current_update_cookie_timer = None
 
+        self._crawl_delay_time = 0.1
+
+        self._cookie_update_delay_time = 0.1
+        
         self._cookie_update_on = False
 
         self._seed_videoID = 'OQSNhk5ICTI'
@@ -166,7 +170,9 @@ class Crawler(object):
             req = Request("http://www.youtube.com/watch?v="+self._seed_videoID)
             f = opener.open(req)
             src = f.read()
-            self.src = src
+
+            time.sleep(self._cookie_update_delay_time)
+            
             cookiename = ['YSC', 'PREF', 'VISITOR_INFO1_LIVE', 'ACTIVITY']
             self._cookie = ''
             for cookie in cj:
@@ -177,6 +183,8 @@ class Crawler(object):
             re_st = re.compile('\'XSRF_TOKEN\'\: \"([^\"]+)\"\,')
             self._session_token = re_st.findall(src)[0]
 
+            
+            
             # test
             try:
                 self.single_crawl(self._seed_videoID)
@@ -261,7 +269,7 @@ class Crawler(object):
 
             txt = ''
             try:
-                self.mutex_delay(0.1)
+                self.mutex_delay(self._crawl_delay_time)
                 request = urllib2.Request(url, data, headers=header)
                 txt = urllib2.urlopen(request).read()
 

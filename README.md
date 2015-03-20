@@ -83,6 +83,16 @@ Input/Output Format
 
 Configuration
 -------------
+One should configure the following parameters before crawling,
+  ```python
+  c = Crawler()
+  c._crawl_delay_time = 1 # set crawling delay to 1
+  c._cookie_update_delay_time = 1 # set cookie updating delay to 1
+  ```
+
+* ```_crawl_delay_time```: the time delay of crawling (in seconds). Default: ```0.1``` which will request 10 times per second.
+* ```_cookie_update_delay_time```: the time delay of updating cookies (in seconds). Default: ```0.1```.
+
 
 
 Continue from Breakpoint
