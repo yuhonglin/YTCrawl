@@ -56,7 +56,7 @@ class Crawler(object):
 
         self._crawl_delay_time = 0.1
 
-        self._cookie_update_delay_time = 0.1h
+        self._cookie_update_delay_time = 0.1
         
         self._cookie_update_on = False
 
