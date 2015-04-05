@@ -135,7 +135,7 @@ class Crawler(object):
         Arguments:
         - `k`:
         """
-        return 'http://www.youtube.com/insight_ajax?action_get_statistics_and_data=1&v=' + k
+        return 'https://www.youtube.com/insight_ajax?action_get_statistics_and_data=1&v=' + k
 
 
     def update_cookie_and_sectiontoken(self):
@@ -167,7 +167,7 @@ class Crawler(object):
             # get cookies
             cj = cookielib.CookieJar()
             opener = build_opener(HTTPCookieProcessor(cj), HTTPHandler())
-            req = Request("http://www.youtube.com/watch?v="+self._seed_videoID)
+            req = Request("https://www.youtube.com/watch?v="+self._seed_videoID)
             f = opener.open(req)
             src = f.read()
 
@@ -225,7 +225,7 @@ class Crawler(object):
         headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
         headers['Cookie'] = self._cookie
         headers['Host'] = 'www.youtube.com'
-        headers['Referer'] = 'http://www.youtube.com/watch?v=' + k
+        headers['Referer'] = 'https://www.youtube.com/watch?v=' + k
         headers['User-Agent'] = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:31.0) Gecko/20100101 Firefox/31.0'
         
         return headers
