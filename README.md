@@ -1,3 +1,8 @@
+WARNING: This package does not work anymore. I leave it here to potentially inspire others.
+==================
+
+---
+
 A YouTube video history metadata crawler (ytcrawl)
 ========================================
 
